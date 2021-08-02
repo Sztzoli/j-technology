@@ -5,12 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MasterRepositoryIT {
 
@@ -43,7 +41,7 @@ class MasterRepositoryIT {
 
         List<Object[]> result = masterRepository.getSelect();
 
-        System.out.println(Arrays.toString(result.get(0)));
+        assertEquals(2,result.size());
         assertEquals(master.getId(), result.get(0)[0]);
         assertEquals(master2.getId(), result.get(1)[0]);
         assertEquals(LocalDate.now(), result.get(0)[1]);

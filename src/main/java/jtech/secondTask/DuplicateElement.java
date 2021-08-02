@@ -4,7 +4,7 @@ import java.util.*;
 
 public class DuplicateElement {
 
-    private List<Long> numbers;
+    private final List<Long> numbers;
 
     public DuplicateElement(List<Long> numbers) {
         this.numbers = numbers;
@@ -38,7 +38,4 @@ public class DuplicateElement {
         }
     }
 
-    public void print() {
-        System.out.println("Sör");
-    }
 }
