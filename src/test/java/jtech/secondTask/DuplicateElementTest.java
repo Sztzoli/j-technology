@@ -11,59 +11,66 @@ import static org.junit.jupiter.api.Assertions.*;
 class DuplicateElementTest {
 
 
+    //    @Test
+//    void test() {
+//        List<Long> numbers = List.of(1L,3L,1L,3L);
+//        DuplicateElement duplicateElement = new DuplicateElement(numbers);
+//        System.out.println(duplicateElement.getDuplicate());
+//        numbers = List.of(1L,3L,1L,3L,2L);
+//        DuplicateElement duplicateElement2 = new DuplicateElement(numbers);
+//        System.out.println(duplicateElement2.getDuplicate());
+//    }
+//
+//    @Test
+//    void test2() {
+//        List<Long> numbers = new ArrayList<>();
+//        Random rnd = new Random();
+//        long n = 1000000L;
+//        for (int i = 1; i <= n+1; i++) {
+//            long number = (long)(1+Math.random()*n);
+//            numbers.add(number);
+//        }
+//        DuplicateElement duplicateElement = new DuplicateElement(numbers);
+//        System.out.println(duplicateElement.getDuplicate());
+//    }
+//
+//   @Test
+//    void print() {
+//       List<Long> numbers = List.of(1L,3L,1L,3L,2L);
+//       DuplicateElement duplicateElement = new DuplicateElement(numbers);
+//       duplicateElement.printDuplicate();
+//   }
+//
+    @Test
+    void print2() {
+        List<Integer> numbers = new ArrayList<>();
+        Random rnd = new Random();
+        int n = 10;
+        for (int i = 1; i <= n + 1; i++) {
+            int number = rnd.nextInt(n) + 1;
+            numbers.add(number);
+        }
+        DuplicateElement duplicateElement = new DuplicateElement(numbers);
+        duplicateElement.printDuplicateWithOutCollections();
+    }
+//
+//    @Test
+//    void print3() {
+//        List<Long> numbers = new ArrayList<>();
+//        Random rnd = new Random();
+//        long n = 50L;
+//        for (int i = 1; i <= n+1; i++) {
+//            long number = (long)(1+Math.random()*n);
+//            numbers.add(number);
+//        }
+//        DuplicateElement duplicateElement = new DuplicateElement(numbers);
+//        duplicateElement.printDuplicate();
+//    }
+
     @Test
     void test() {
-        List<Long> numbers = List.of(1L,3L,1L,3L);
+        List<Integer> numbers = List.of(1, 3, 4, 3, 4);
         DuplicateElement duplicateElement = new DuplicateElement(numbers);
-        System.out.println(duplicateElement.getDuplicate());
-        numbers = List.of(1L,3L,1L,3L,2L);
-        DuplicateElement duplicateElement2 = new DuplicateElement(numbers);
-        System.out.println(duplicateElement2.getDuplicate());
-    }
-
-    @Test
-    void test2() {
-        List<Long> numbers = new ArrayList<>();
-        Random rnd = new Random();
-        long n = 1000000L;
-        for (int i = 1; i <= n+1; i++) {
-            long number = (long)(1+Math.random()*n);
-            numbers.add(number);
-        }
-        DuplicateElement duplicateElement = new DuplicateElement(numbers);
-        System.out.println(duplicateElement.getDuplicate());
-    }
-
-   @Test
-    void print() {
-       List<Long> numbers = List.of(1L,3L,1L,3L,2L);
-       DuplicateElement duplicateElement = new DuplicateElement(numbers);
-       duplicateElement.printDuplicate();
-   }
-
-   @Test
-    void print2() {
-       List<Long> numbers = new ArrayList<>();
-       Random rnd = new Random();
-       long n = 1000000L;
-       for (int i = 1; i <= n+1; i++) {
-           long number = (long)(1+Math.random()*n);
-           numbers.add(number);
-       }
-       DuplicateElement duplicateElement = new DuplicateElement(numbers);
-       duplicateElement.printDuplicate();
-   }
-
-    @Test
-    void print3() {
-        List<Long> numbers = new ArrayList<>();
-        Random rnd = new Random();
-        long n = 50L;
-        for (int i = 1; i <= n+1; i++) {
-            long number = (long)(1+Math.random()*n);
-            numbers.add(number);
-        }
-        DuplicateElement duplicateElement = new DuplicateElement(numbers);
-        duplicateElement.printDuplicate();
+        duplicateElement.printDuplicateWithOutCollections();
     }
 }

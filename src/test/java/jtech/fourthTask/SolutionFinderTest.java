@@ -9,7 +9,7 @@ class SolutionFinderTest {
     @Test
     void test() {
         SolutionFinder one = SolutionFinder.getInstance();
-        assertEquals("you search for it on stackoverflow", one.answer);
+        assertEquals("you search for it on stackoverflow", one.getAnswer());
         SolutionFinder two = SolutionFinder.getInstance();
         assertEquals(one, two);
     }

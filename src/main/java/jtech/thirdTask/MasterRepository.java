@@ -32,4 +32,22 @@ public class MasterRepository {
         em.close();
         return result;
     }
+
+    public List<Object[]> getSelectPlain() {
+        EntityManager em = entityManagerFactory.createEntityManager();
+        List<Object[]> result = em.createNativeQuery(
+                "SELECT id, created , attr2 , (\n" +
+                "SELECT COUNT(status)\n" +
+                "FROM Detail \n" +
+                "WHERE master_id = `master`.id AND STATUS=0), (\n" +
+                "SELECT COUNT(status)\n" +
+                "FROM Detail \n" +
+                "WHERE master_id = `master`.id AND STATUS=1)\n" +
+                "FROM `master`\n" +
+                "WHERE `master`.created >= (DATE_ADD(CURRENT_DATE, INTERVAL -100 day))"
+        ).getResultList();
+
+        em.close();
+        return result;
+    }
 }
